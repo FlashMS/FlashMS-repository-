@@ -16,3 +16,11 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }} # Azure service principal credentials
+      - name: Check Script Existence
+        run: |
+          if [ ! -f "./scripts/deploy-resources.ps1" ]; then
+            echo "Error: deploy-resources.ps1 not found in ./scripts/"
+            exit 1
+          fi
+      - name: Run PowerShell Script
+        run: pwsh -File ./scripts/deploy-resources.ps1
