@@ -1,0 +1,5 @@
+
+🔧 Generated Commit Message:
+Scripts: Add existence check — assign-role.ps1
+
+- Improves resilience and avoids silent failures

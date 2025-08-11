@@ -2,6 +2,8 @@
 
 This portfolio is a modular, automation-ready toolkit designed for hybrid cloud administrators. It showcases resilient PowerShell scripting, session continuity workflows, and secure Azure deployment practices — all built with portability, recovery, and clarity in mind.
 
+It also demonstrates hands-on Azure administration using PowerShell, Azure CLI, and GitHub Actions — automating resource creation and management to highlight DevOps fluency and cloud lifecycle control.
+
 ---
 
 ## Key Features
@@ -11,45 +13,16 @@ This portfolio is a modular, automation-ready toolkit designed for hybrid cloud 
 - Monitoring starter scripts for Log Analytics, Alerts, and Metrics  
 - Role-based access control (RBAC) scaffolds for secure resource management  
 - Infrastructure as Code samples for scalable provisioning  
+- CLI and PowerShell scripts for resource lifecycle management  
+- YAML workflows for CI/CD deployment automation  
 
 ---
 
 ## 📁 Folder Structure
-## 📁 Folder Structure
 
 ```
-Azure-Admin-Portfolio/
-├── README.md
-├── PowerShellToolkit/
-│   ├── initProfile.ps1
-│   ├── aliases.ps1
-│   ├── sessionTracker.ps1
-│   └── tools/
-│       ├── syncLogs.ps1
-│       └── archiveLogs.ps1
-├── Monitoring/
-│   ├── README.md
-│   ├── LogAnalytics/
-│   ├── Alerts/
-│   └── Metrics/
-├── RBAC/
-│   ├── define-roles.ps1
-│   └── assign-role.ps1
-├── IaC/
-│   └── deploy-vnet.bicep
-├── scripts/
-│   ├── deploy-resources.ps1
-│   ├── delete-resources.ps1
-│   └── cli-commands.sh
-├── .github/
-│   └── workflows/
-│       └── azure-deploy.yml
-├── validate.yml
-├── rbac/
-├── Tier II Monitoring Module/
-└── role assignment script/
+Azure-Admin-Portfolio/ ├── README.md ├── PowerShellToolkit/ │ ├── initProfile.ps1 │ ├── aliases.ps1 │ ├── sessionTracker.ps1 │ └── tools/ │ ├── syncLogs.ps1 │ └── archiveLogs.ps1 ├── Monitoring/ │ ├── README.md │ ├── LogAnalytics/ │ ├── Alerts/ │ └── Metrics/ ├── RBAC/ │ ├── define-roles.ps1 │ └── assign-role.ps1 ├── IaC/ │ └── deploy-vnet.bicep ├── scripts/ │ ├── deploy-resources.ps1 │ ├── delete-resources.ps1 │ └── cli-commands.sh ├── .github/ │ └── workflows/ │ └── azure-deploy.yml ├── validate.yml ├── rbac/ ├── Tier II Monitoring Module/ └── role assignment script/
 ```
-
 
 
 ---
@@ -63,40 +36,28 @@ Azure-Admin-Portfolio/
 
 ---
 
-## Usage
+## Setup
 
-- Tested deployment: 2025-06-09 at 03:05 PM EDT  
-- Deploy resources: Run `deploy-resources.ps1` to create resources  
-- Check resources: Use `cli-commands.sh` to list or verify resources  
-- Clean up: Run `delete-resources.ps1` to delete resources  
-- Automation: GitHub Actions runs `deploy-resources.ps1` on push to `main`  
+- Azure account with active subscription  
+- PowerShell 7+ with Az module (`Install-Module -Name Az`)  
+- Azure CLI installed (`az login`)  
+- GitHub repository with secrets configured (see below)
 
----
+### Configure Azure Credentials
 
-## Skills Demonstrated
+Create a service principal:
 
-- PowerShell: Scripting for Azure resource management  
-- Azure CLI: Basic resource monitoring and querying  
-- YAML/DevOps: CI/CD pipeline automation with GitHub Actions  
-- Networking: Virtual network configuration (e.g., VNet, subnets)  
-- Cloud Administration: Resource lifecycle management and security best practices  
+```bash
+az ad sp create-for-rbac --name "PortfolioSP" --role Contributor --scopes /subscriptions/<your-subscription-id>
+
 
 ---
 
-## About Me
+## 🧩 Next Steps
 
-I’m Todd Wolf — an IT pro transitioning into cloud engineering, driven by workflow clarity and hands-on automation. I build tools that don’t just work — they self-heal, log their own progress, and speak in readable architecture. This portfolio reflects my obsession with modular design, shell fluency, and recovery-focused scripting across local, cloud, and remote contexts.
+1. Replace the contents of `README.md` with the above.
+2. Run:
 
-Thanks for visiting this repo. If it helps make Azure workflows more transparent, I’ve done my job.
-
----
-
-## License
-
-MIT License. See `LICENSE` for details.
-
----
-
-## Contact
-
-Built by Todd Wolf. Connect on [LinkedIn](https://www.linkedin.com/in/toddwolf) or [GitHub](https://github.com/tokab) for collaboration.
+```bash
+git add README.md
+git rebase --continue
