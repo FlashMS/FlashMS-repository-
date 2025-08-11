@@ -61,3 +61,5 @@ az ad sp create-for-rbac --name "PortfolioSP" --role Contributor --scopes /subsc
 ```bash
 git add README.md
 git rebase --continue
+
+[![Recruiter Ready](https://img.shields.io/badge/Recruiter-Ready-brightgreen)](https://yourportfolio.link)
