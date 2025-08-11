@@ -63,3 +63,7 @@ git add README.md
 git rebase --continue
 
 [![Recruiter Ready](https://img.shields.io/badge/Recruiter-Ready-brightgreen)](https://yourportfolio.link)
+
+## 📁 Repo Modules
+- [Monitoring](./Monitoring/README.md)
+
